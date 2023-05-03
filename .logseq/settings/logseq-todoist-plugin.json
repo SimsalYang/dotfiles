@@ -1,0 +1,15 @@
+{
+  "apiToken": "KtE71bDUeY2OpDBr3LQEgWEHUZPFN1yi",
+  "": "",
+  "sendDefaultProject": "",
+  "sendDefaultLabel": "",
+  "sendDefaultDeadline": false,
+  "sendAppendUri": true,
+  "retrieveDefaultProject": "",
+  "projectNameAsParentBlk": false,
+  "retrieveAppendTodo": true,
+  "retrieveAppendUrl": false,
+  "retrieveClearTasks": false,
+  "enableTodoistSync": false,
+  "disabled": false
+}

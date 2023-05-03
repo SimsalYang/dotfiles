@@ -1,0 +1,17 @@
+{
+  "keyboard": "f f",
+  "disabled": false,
+  "init": true,
+  "on_startup": [],
+  "on_toggle": [
+    "Toggle Fullscreen Mode",
+    "Toggle Line Highlight"
+  ],
+  "on_focus": [
+    "Hide Help"
+  ],
+  "on_unfocus": [
+    "Show Left Sidebar",
+    "Show help"
+  ]
+}
