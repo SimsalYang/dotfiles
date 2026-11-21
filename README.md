@@ -6,7 +6,7 @@
 
 | 目录 | 说明 |
 |---|---|
-| `PowerShell/` | PowerShell 配置（主题、插件） |
+| `PowerShell/` | PowerShell 配置（starship 提示符 + fnm Node 版本管理初始化） |
 | `.logseq/` | Logseq 笔记配置 |
 | `nvim/` | Neovim 配置（lazy.nvim + LSP + Treesitter） |
 
