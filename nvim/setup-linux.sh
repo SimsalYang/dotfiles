@@ -7,6 +7,26 @@
 
 set -e
 
+# 同步模式：本机 ~/.config/nvim/init.lua -> 仓库（备份，方向不可逆）
+if [ "${1:-}" = "--sync" ]; then
+    repo_root="$(cd "$(dirname "$0")" && pwd)"
+    src="${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.lua"
+    if [ ! -f "$src" ]; then
+        echo "找不到本机配置: $src" >&2
+        exit 1
+    fi
+    cp "$src" "$repo_root/nvim/init.lua"
+    if git -C "$repo_root" status --porcelain -- nvim/init.lua | grep -q .; then
+        git -C "$repo_root" add nvim/init.lua
+        git -C "$repo_root" commit -m "Sync nvim config ($(date '+%Y-%m-%d %H:%M'))"
+        git -C "$repo_root" push
+        echo '==> 已提交并推送。' 
+    else
+        echo '==> 配置没有变化，无需提交。'
+    fi
+    exit 0
+fi
+
 echo '==> 安装系统依赖 ...'
 if command -v apt-get >/dev/null 2>&1; then
     sudo apt-get update

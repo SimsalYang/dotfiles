@@ -36,6 +36,12 @@ git clone https://github.com/SimsalYang/dotfiles.git
 bash ./dotfiles/nvim/setup-linux.sh
 ```
 
+Linux 上日常改完配置后，用同一个脚本备份到仓库：
+
+```bash
+bash ./dotfiles/nvim/setup-linux.sh --sync
+```
+
 脚本自动完成（支持 Debian/Ubuntu、Fedora、Arch）：
 
 1. 用发行版包管理器安装依赖：git、ripgrep、fd、gcc、make、xclip（剪贴板互通）、nodejs/npm（Mason 装 pyright 需要）、python3
