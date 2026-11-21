@@ -29,7 +29,7 @@ Windows Terminal（稳定版）的 `settings.json` 备份。本机实际位置�
   scoop install JetBrainsMono-NF
   ```
 
-  然后在 settings.json 的 `profiles.defaults` 里加一行 `"font": { "face": "JetBrainsMono Nerd Font" }`（当前备份尚未设置字体，这是为了跟 nvim 的图标显示对齐，建议恢复后加上）。
+当前备份已配置字体：所有 profile 默认 `JetBrainsMono Nerd Font`，PowerShell profile 单独用 `FiraCode Nerd Font`，恢复后如需调整直接改 `settings.json` 的 `profiles` 段即可。
 
 ## 同步回仓库
 
