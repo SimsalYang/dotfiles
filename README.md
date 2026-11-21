@@ -2,6 +2,17 @@
 
 个人配置文件备份。换电脑时按各目录的说明快速恢复。
 
+## 新电脑一键恢复（Windows）
+
+前提：已安装 git。在普通 PowerShell（非管理员）中执行：
+
+```powershell
+git clone https://github.com/SimsalYang/dotfiles.git
+powershell -ExecutionPolicy Bypass -File .\dotfiles\restore-all.ps1
+```
+
+一条命令完成全部：scoop → Neovim 及依赖 → starship/fnm → PowerShell profile → Windows Terminal 配置。完成后重开终端，首次运行 `nvim` 会自动下载插件和语言服务器。各目录的详细说明见下表。
+
 ## 目录
 
 | 目录 | 说明 |
