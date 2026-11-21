@@ -9,6 +9,7 @@
 | `PowerShell/` | PowerShell 配置（starship 提示符 + fnm Node 版本管理初始化） |
 | `.logseq/` | Logseq 笔记配置 |
 | `nvim/` | Neovim 配置（lazy.nvim + LSP + Treesitter） |
+| `windows-terminal/` | Windows Terminal 配置（settings.json 备份 + 恢复说明） |
 
 ## nvim/ — Windows 一键恢复
 
