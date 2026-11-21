@@ -8,7 +8,7 @@ Neovim 配置文件（Windows）。本机配置文件的实际位置：`%LOCALAP
 |---|---|
 | `init.lua` | Neovim 主配置（插件、LSP、快捷键都在里面） |
 | `setup-windows.ps1` | **新电脑恢复**：一键安装 Neovim 及全部依赖，并部署本配置 |
-| `sync.ps1` | **日常同步**：把本机最新的 `init.lua` 复制到仓库并提交推送 |
+| `sync.ps1` | （已移至仓库根目录）通用同步脚本，覆盖 nvim / PowerShell / 终端配置 |
 
 ## 场景一：在新 Windows 电脑上恢复环境
 
@@ -29,15 +29,15 @@ powershell -ExecutionPolicy Bypass -File .\dotfiles\nvim\setup-windows.ps1
 
 ## 场景二：本机改完配置，同步到仓库
 
-日常在 `%LOCALAPPDATA%\nvim\init.lua` 里改配置、验证没问题后，运行：
+日常在 `%LOCALAPPDATA%\nvim\init.lua` 里改配置、验证没问题后，运行仓库**根目录**的通用同步脚本：
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File <仓库路径>\nvim\sync.ps1
+powershell -ExecutionPolicy Bypass -File <仓库路径>\sync.ps1
 ```
 
-脚本会自动：复制最新配置 → 检查有没有改动 → 有改动就提交并推送，没有改动就提示无需提交。
+脚本会自动同步 Neovim、PowerShell profile、Windows Terminal 三处配置：逐文件检查改动 → 有改动就提交并推送，全部最新则提示无需提交。
 
-> 注意：`sync.ps1` 的方向是 **本机 → 仓库**（备份）。不要在仓库里直接改 `init.lua`，否则下次同步会被本机覆盖。
+> 注意：同步方向永远是 **本机 → 仓库**（备份）。不要在仓库里直接改文件，否则下次同步会被本机覆盖。
 
 ## 场景三：手动同步（脚本不可用时的兜底）
 
