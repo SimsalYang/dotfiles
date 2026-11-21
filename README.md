@@ -13,13 +13,20 @@ powershell -ExecutionPolicy Bypass -File .\dotfiles\restore-all.ps1
 
 一条命令完成全部：scoop → Neovim 及依赖 → starship/fnm → PowerShell profile → Windows Terminal 配置。完成后重开终端，首次运行 `nvim` 会自动下载插件和语言服务器。各目录的详细说明见下表。
 
+**Linux 机器**只需恢复 Neovim（其他配置都是 Windows 专属）：
+
+```bash
+git clone https://github.com/SimsalYang/dotfiles.git
+bash ./dotfiles/nvim/setup-linux.sh
+```
+
 ## 目录
 
 | 目录 | 说明 |
 |---|---|
 | `PowerShell/` | PowerShell 配置（starship 提示符 + fnm Node 版本管理初始化） |
 | `.logseq/` | Logseq 笔记配置 |
-| `nvim/` | Neovim 配置（lazy.nvim + LSP + Treesitter） |
+| `nvim/` | Neovim 配置（lazy.nvim + LSP + Treesitter；Windows/Linux 通用，各有一键安装脚本） |
 | `windows-terminal/` | Windows Terminal 配置（settings.json 备份 + 恢复说明） |
 
 ## nvim/ — Windows 一键恢复

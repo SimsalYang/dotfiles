@@ -1,6 +1,6 @@
 # nvim/
 
-Neovim 配置文件（Windows）。本机配置文件的实际位置：`%LOCALAPPDATA%\nvim\init.lua`。
+Neovim 配置文件（Windows / Linux 通用）。本机配置文件位置：Windows 为 `%LOCALAPPDATA%\nvim\init.lua`，Linux 为 `~/.config/nvim/init.lua`。
 
 ## 目录内容
 
@@ -26,6 +26,23 @@ powershell -ExecutionPolicy Bypass -File .\dotfiles\nvim\setup-windows.ps1
 3. 把 `init.lua` 复制到 `%LOCALAPPDATA%\nvim\`
 
 然后重新打开终端，运行 `nvim`——首次启动会自动下载全部插件（lazy.nvim）和语言服务器（lua_ls / pyright / ruff），保持网络畅通，等它跑完即可。
+
+## 场景一（Linux）：在新 Linux 机器上恢复环境
+
+前提：已安装 git 和 curl。运行：
+
+```bash
+git clone https://github.com/SimsalYang/dotfiles.git
+bash ./dotfiles/nvim/setup-linux.sh
+```
+
+脚本自动完成（支持 Debian/Ubuntu、Fedora、Arch）：
+
+1. 用发行版包管理器安装依赖：git、ripgrep、fd、gcc、make、xclip（剪贴板互通）、nodejs/npm（Mason 装 pyright 需要）、python3
+2. 安装 Neovim（源内版本 ≥ 0.11 直接用源内的，过旧则自动从 GitHub 下载官方版到 `~/.local/opt`）
+3. 把 `init.lua` 复制到 `~/.config/nvim/`
+
+然后运行 `nvim`，首次启动自动下载插件和语言服务器。字体需自行安装一款 Nerd Font；无桌面的服务器环境可跳过。
 
 ## 场景二：本机改完配置，同步到仓库
 
