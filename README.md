@@ -47,3 +47,5 @@ powershell -ExecutionPolicy Bypass -File .\dotfiles\nvim\setup-windows.ps1
 - **快捷键提示**：which-key.nvim（Leader 键 = 空格）
 
 新增语言支持：在 nvim 内 `:MasonInstall <服务器>`，然后在 `init.lua` 的 `vim.lsp.enable({...})` 一行里加上服务器名。
+
+详细操作（新电脑恢复、日常同步、网络备注）见 [nvim/README.md](nvim/README.md)。
